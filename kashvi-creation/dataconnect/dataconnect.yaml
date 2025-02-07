@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "kashvi-creation"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "kashvi-creation-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
