@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6d5c7;
+    padding: 15px 30px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .nav-links li a:hover {
+    color: #b08c74;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .icon:hover {
+    color: #b08c74;
+  }
