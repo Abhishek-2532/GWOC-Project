@@ -15,7 +15,7 @@ const Home = () => {
         <h2 className="text-2xl font-bold text-center mb-6">Featured Collection</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div className="bg-white shadow-md p-4 rounded-lg">
-            <Image src="/saree1.jpg" alt="Saree 1" width={400} height={400} className="rounded-lg" />
+          <Image src="/https://images.unsplash.com/photo-1610030469839-f909584b43f1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Saree 1" width={400} height={400} className="rounded-lg" />
             <h3 className="text-xl font-semibold mt-4">Elegant Red Saree</h3>
             <p className="text-gray-600">Design Number: KC101</p>
           </div>

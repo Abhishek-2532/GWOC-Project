@@ -1,3 +1,4 @@
+
 const About = () => {
     return (
       <section className="bg-gray-100 py-8 px-4">
