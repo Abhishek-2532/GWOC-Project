@@ -1,6 +1,6 @@
-/* @tailwind base; */
-/* @tailwind components; */
-/* @tailwind utilities; */
+ /*@tailwind base; 
+ @tailwind components;
+ @tailwind utilities; */
 
 :root {
   --background: #ffffff;
@@ -19,4 +19,3 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
