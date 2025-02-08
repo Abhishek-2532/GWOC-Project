@@ -24,6 +24,9 @@ const Navbar = () => {
         <li><Link href="/about" className={styles.navLink}>About</Link></li>
         <li><Link href="/contact" className={styles.navLink}>Contact</Link></li>
         <li><Link href="/blogs" className={styles.navLink}>Blogs</Link></li>
+        {/* Temproary links for login and signup */}
+        <li><Link href="/login" className={styles.navLink}>login</Link></li>
+        <li><Link href="/signup" className={styles.navLink}>signup</Link></li>
       </ul>
 
       <div className={styles.rightIcons}>

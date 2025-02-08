@@ -12,6 +12,10 @@ const ImageSlider = () => {
     "/24341-1_page-0002.jpg",
     "/24341-1_page-0003.jpg",
     "/24341-1_page-0006.jpg",
+    "/24341-1_page-0005.jpg",
+    "/24341-1_page-0004.jpg",
+    "/24341-1_page-0001.jpg",
+    "/24341-1_page-0007.jpg",
   ];
 
   return (
