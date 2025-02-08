@@ -19,10 +19,11 @@ const Navbar = () => {
       </button>
 
       <ul className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`}>
-        <li><Link href="/pages/gallery" className={styles.navLink}>Gallery</Link></li>
-        <li><Link href="/pages/bestsellers" className={styles.navLink}>Bestsellers</Link></li>
-        <li><Link href="/pages/about" className={styles.navLink}>About</Link></li>
-        <li><Link href="/pages/contact" className={styles.navLink}>Contact</Link></li>
+        <li><Link href="/gallery" className={styles.navLink}>Gallery</Link></li>
+        <li><Link href="/bestsellers" className={styles.navLink}>Bestsellers</Link></li>
+        <li><Link href="/about" className={styles.navLink}>About</Link></li>
+        <li><Link href="/contact" className={styles.navLink}>Contact</Link></li>
+        <li><Link href="/blogs" className={styles.navLink}>Blogs</Link></li>
       </ul>
 
       <div className={styles.rightIcons}>
