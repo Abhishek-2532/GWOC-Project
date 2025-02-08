@@ -1,4 +1,4 @@
-/* Navbar Container */
+/* General Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,41 +6,13 @@
   background-color: #e6d5c7;
   padding: 15px 30px;
   font-family: "Arial", sans-serif;
-}
-
-/* Search Bar Styling */
-.searchContainer {
   position: relative;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  background-color: white;
-  padding: 5px 10px;
-  width: 250px;  
-  height: 40px;
 }
 
-.searchInput {
-  border: none;
-    outline: none;
-    padding: 5px 10px;
-    width: 100%;  
-    height: 100%; 
-    border-radius: 20px;
-    font-size: 16px;
-}
-
-/* Search Icon Positioned Inside Input */
-.searchIcon {
-  position: absolute;
-    right: 10px;
-    color: #888;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-.searchIcon:hover {
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
   color: black;
 }
 
@@ -51,30 +23,94 @@
   gap: 20px;
 }
 
-.navLink {
+.navLinks li a {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
-.navLink:hover {
-  color: #8a5a44;
+.navLinks li a:hover {
+  color: #b08c74;
+  border-bottom: 2px solid #b08c74;
 }
 
-.navLink:active {
-  color: #5a3a2c;
+/* Right Section (Icons + Search) */
+.rightIcons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Icons Styling */
 .icon {
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   color: black;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease;
 }
 
 .icon:hover {
-  color: #8a5a44;
+  color: #b08c74;
+}
+
+/* Search Bar */
+.searchContainer {
+  position: relative;
+}
+
+.searchInput {
+  padding: 8px 30px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.searchContainer .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: gray;
+}
+
+/* Mobile Menu Button (Hamburger) */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 📌 Responsive Design (Mobile) */
+@media screen and (max-width: 768px) {
+  /* Hide normal nav links on mobile */
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #e6d5c7;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show menu when active */
+  .navLinks.active {
+    display: flex;
+  }
+
+  /* Show hamburger button */
+  .menuButton {
+    display: block;
+  }
+
+  /* Center icons */
+  .rightIcons {
+    gap: 10px;
+  }
 }
