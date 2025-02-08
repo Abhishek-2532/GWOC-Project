@@ -21,9 +21,10 @@ const Navbar = () => {
       {/* Center: Navigation Links (Shown/Hidden Based on Screen Size) */}
       <ul className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`}>
         <li><Link href="/gallery" className={styles.navLink}>Gallery</Link></li>
-        <li><Link href="/bestsellers" className={styles.navLink}>Bestsellers</Link></li>
-        <li><Link href="/about" className={styles.navLink}>About</Link></li>
-        <li><Link href="/contact" className={styles.navLink}>Contact</Link></li>
+        <li><Link href="/bestsellers" className={styles.navLink}>Bestseller</Link></li>
+        <li><Link href="/about" className={styles.navLink}>About Us</Link></li>
+        <li><Link href="/contact" className={styles.navLink}>Contact Us</Link></li>
+        <li><Link href="/Vlog" className={styles.navLink}>Vlog</Link></li>
       </ul>
 
       {/* Right: Search Bar, Wishlist, Cart, and Profile Icons */}
