@@ -17,13 +17,14 @@ const Bestsellers = () => {
           <img src="/saree2.jpg" alt="Bestseller 2" className="rounded-lg" />
           <h3 className="text-xl font-semibold mt-4">Modern Blue Saree</h3>
           <p className="text-gray-600">Design Number: KC102</p>
-        </div>
+        
         <div className="bg-white shadow-md p-4 rounded-lg">
           <img src="/saree3.jpg" alt="Bestseller 3" className="rounded-lg" />
           <h3 className="text-xl font-semibold mt-4">Graceful Green Saree</h3>
           <p className="text-gray-600">Design Number: KC103</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
