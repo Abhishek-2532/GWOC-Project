@@ -44,6 +44,12 @@
   color: #b08c74;
   border-bottom: 2px solid #b08c74;
 }
+/* Highlight active page */
+.navLinks li a.active {
+  color: #d0895a;
+  border-bottom: 2px solid #b08c74;
+  font-weight: bold;
+}
 
 /* Right Section (Icons + Search) */
 .rightIcons {

@@ -70,7 +70,7 @@ export default function HeroSlider() {
             <div key={slide.id} className="min-w-full flex items-center justify-center">
               {/* Image on the Left */}
               <div className="w-1/2 h-full flex justify-center items-center">
-                <img className="max-w-sm rounded-lg shadow-2xl "
+                <img className="max-w-sm h-full w-full rounded-lg shadow-2xl "
                   src={slide.image}
                   alt={slide.title}
                 />
