@@ -2,6 +2,7 @@
  @tailwind components;
  @tailwind utilities; */
 
+/* Root Variables for Light and Dark Mode */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,8 +15,132 @@
   }
 }
 
+/* Global Body Styles */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Base Styles (Default for Desktop) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rightIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mobile Styles (screens smaller than 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    display: none; /* Initially hidden */
+  }
+
+  .navLinks.active {
+    display: flex; /* Shown when menu is toggled */
+  }
+
+  .menuButton {
+    display: block; /* Show menu button for mobile */
+  }
+
+  .searchContainer {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .rightIcons {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Tablet Styles (screens between 600px and 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .rightIcons {
+    gap: 0.75rem;
+  }
+}
+
+/* Large Screens (screens larger than 1024px) */
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 1.5rem 3rem;
+  }
+
+  .navLinks {
+    gap: 1.5rem;
+  }
+
+  .rightIcons {
+    gap: 1.25rem;
+  }
+}
+
+/* Additional Global Adjustments */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.6;
 }
