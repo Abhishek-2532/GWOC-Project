@@ -1,13 +1,23 @@
-/* General Navbar Styles */
+
 .navbar {
+  position: fixed; /* Keeps navbar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e6d5c7;
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   padding: 15px 30px;
   font-family: "Arial", sans-serif;
-  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensures navbar stays on top */
 }
+
+
 
 /* Logo */
 .logo {

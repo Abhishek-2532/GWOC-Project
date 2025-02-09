@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "@tailwindcss/postcss": "^4.0.5",
+    "autoprefixer": "^10.4.20",
     "firebase": "^11.3.0",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
@@ -19,7 +21,7 @@
     "swiper": "^11.2.2"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
   }
 }
