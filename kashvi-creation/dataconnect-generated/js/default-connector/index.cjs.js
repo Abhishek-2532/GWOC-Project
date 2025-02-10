@@ -1,4 +1,4 @@
-const { , validateArgs } = require('firebase/data-connect');
+const { validateArgs } = require('firebase/data-connect');
 
 const connectorConfig = {
   connector: 'default',
@@ -6,4 +6,7 @@ const connectorConfig = {
   location: 'us-central1'
 };
 exports.connectorConfig = connectorConfig;
+
+// Validate arguments using validateArgs function
+validateArgs(connectorConfig);
 

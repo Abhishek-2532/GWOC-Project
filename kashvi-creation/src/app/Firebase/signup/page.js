@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // Adjust the path if needed
+import { auth } from "../firebase"; // Adjusted the import path
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
-const Login = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Signup successful!");
     } catch (err) {
       setError(err.message);
     }
@@ -21,8 +21,8 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <h2>Signup</h2>
+      <form onSubmit={handleSignup}>
         <input
           type="email"
           placeholder="Email"
@@ -35,11 +35,11 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Signup</button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
 
-export default Login;
+export default Signup;

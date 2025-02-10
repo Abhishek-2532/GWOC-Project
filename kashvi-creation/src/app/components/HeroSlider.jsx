@@ -1,13 +1,13 @@
 "use client"; // Required for useState
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
     id: 1,
-    image: "/image1.png", // Replace with actual image paths
+    image: "/image1.png",
     title: "A Cut Above",
     subtitle: "Your Princely Glow-Up Starts Here",
     buttonText: "SHOP NOW",
@@ -42,48 +42,59 @@ export default function HeroSlider() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Auto-scroll every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="relative w-full flex items-center justify-center bg-white px-10 py-6">
+    <div className="relative w-full overflow-hidden bg-slate-400 px-10 py-6">
       {/* Left Arrow */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 p-2 bg-white/70 rounded-full hover:bg-white transition"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md transition"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={30} className="text-gray-800" />
       </button>
 
-      {/* Content Wrapper */}
-      <div className="w-full flex items-center justify-center">
-        {/* Image Section (Left) */}
-        <div className="w-1/2 flex justify-end">
-          <div className="relative w-[400px] h-[500px]">
-            <Image
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
-              layout="intrinsic"
-              width={400}
-              height={500}
-              objectFit="cover"
-            />
-          </div>
-        </div>
+      {/* Slider Container */}
+      <div className="relative w-full h-[60vh] flex items-center justify-center ">
+        <div
+          className="flex w-full transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <div key={slide.id} className="min-w-full flex items-center justify-center">
+              {/* Image on the Left */}
+              <div className="w-1/2 h-full flex justify-center items-center">
+                <img className="max-w-sm h-full w-full rounded-lg shadow-2xl "
+                  src={slide.image}
+                  alt={slide.title}
+                />
+              </div>
 
-        {/* Text Section (Right) */}
-        <div className="w-1/2 flex flex-col items-start pl-10">
-          <h2 className="text-4xl font-semibold">{slides[currentSlide].title}</h2>
-          <p className="text-lg text-gray-600 mt-2">{slides[currentSlide].subtitle}</p>
-          <a href={slides[currentSlide].link} className="mt-4 px-6 py-2 bg-black text-white rounded-lg">
-            {slides[currentSlide].buttonText}
-          </a>
+              {/* Text on the Right */}
+              <div className="w-1/2 flex flex-col items-center justify-center text-center space-y-4">
+                <h1 className="text-5xl text-white font-bold">{slide.title}</h1>
+                <p className="py-4 text-white">{slide.subtitle}</p>
+                <a href={slide.link}>
+                  <button className="bg-black text-white hover:bg-gray-600 rounded-none ...">Shop Now</button>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Right Arrow */}
       <button
         onClick={nextSlide}
-        className="absolute right-2 p-2 bg-white/70 rounded-full hover:bg-white transition"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md transition"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={30} className="text-gray-800" />
       </button>
     </div>
   );
