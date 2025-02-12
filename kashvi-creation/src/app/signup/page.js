@@ -1,21 +1,48 @@
 "use client";
-import React from "react";
+import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
+import { auth } from '../Firebase/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import './page.css'; // Import CSS for styling
 
 export default function SignupPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert('Signup successful');
+    } catch (error) {
+      alert('Error signing up: ' + error.message);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-300">
-        <Navbar/>
+      <Navbar/>
       <div className="bg-white shadow-lg rounded-lg p-8 w-96">
         <h2 className="text-2xl font-bold text-center mb-6">Create an Account</h2>
         
         {/* Signup Form */}
-        <form className="flex flex-col space-y-4">
-          <input type="text" placeholder="Full Name" className="p-3 border rounded-md outline-none" />
-          <input type="email" placeholder="Email" className="p-3 border rounded-md outline-none" />
-          <input type="password" placeholder="Password" className="p-3 border rounded-md outline-none" />
+        <form onSubmit={handleSignup} className="flex flex-col space-y-4">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            className="p-3 border rounded-md outline-none"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            className="p-3 border rounded-md outline-none"
+          />
 
-          <button className="bg-slate-400 text-white py-2 rounded-md hover:bg-slate-500 transition">
+          <button type="submit" className="bg-slate-400 text-white py-2 rounded-md hover:bg-slate-500 transition">
             Sign Up
           </button>
         </form>
